@@ -1,0 +1,73 @@
+{
+  "variables": [],
+  "info": {
+    "name": "Hibernate on Payara",
+    "_postman_id": "88a94375-776e-eaec-b973-60945e418f2d",
+    "description": "This collection contains the list of endpoints for handling CRUD operations for demonstrating of using Hibernate on Payara Server. The operations are\n- Get Person List\n- Save Person\n- Update Person\n- Delete Person",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Person List",
+      "request": {
+        "url": "http://localhost:8080/hibernate-example/resources/person",
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "description": "Retrieve list of Person saved within the DB"
+      },
+      "response": []
+    },
+    {
+      "name": "Save Person",
+      "request": {
+        "url": "http://localhost:8080/hibernate-example/resources/person",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"name\": \"Mert\",\n\t\"lastName\": \"Caliskan\"\n}"
+        },
+        "description": "Save given Person info inside DB"
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Person",
+      "request": {
+        "url": "http://localhost:8080/hibernate-example/resources/person/1",
+        "method": "DELETE",
+        "header": [],
+        "body": {},
+        "description": "remove Person with given id from DB"
+      },
+      "response": []
+    },
+    {
+      "name": "Update Person",
+      "request": {
+        "url": "http://localhost:8080/hibernate-example/resources/person",
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"id\": 1,\n\t\"name\": \"John\",\n\t\"lastName\": \"Malkovich\"\n}"
+        },
+        "description": "Update given Person info with provided content"
+      },
+      "response": []
+    }
+  ]
+}
